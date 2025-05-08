@@ -5,7 +5,7 @@ local Window = Rayfield:CreateWindow({
    Icon = "check", -- Icon in Topbar. Can use Lucide Icons (string) or Roblox Image (number). 0 to use no icon (default).
    LoadingTitle = "uScriptHub Suite",
    LoadingSubtitle = "by nashitham",
-   Theme = "DarkBlue", -- Check https://docs.sirius.menu/rayfield/configuration/themes
+   Theme = "Amethyst", -- Check https://docs.sirius.menu/rayfield/configuration/themes
 
    DisableRayfieldPrompts = false,
    DisableBuildWarnings = false, -- Prevents Rayfield from warning when the script has a version mismatch with the interface
@@ -22,15 +22,15 @@ local Window = Rayfield:CreateWindow({
       RememberJoins = true -- Set this to false to make them join the discord every time they load it up
    },
 
-   KeySystem = false, -- Set this to true to use our key system
+   KeySystem = true, -- Set this to true to use our key system
    KeySettings = {
-      Title = "Untitled",
+      Title = "uScript Key",
       Subtitle = "Key System",
-      Note = "No method of obtaining the key is provided", -- Use this to tell the user how to get a key
-      FileName = "Key", -- It is recommended to use something unique as other scripts using Rayfield may overwrite your key file
-      SaveKey = true, -- The user's key will be saved, but if you change the key, they will be unable to use your script
+      Note = "Use the key provided in the discord server", -- Use this to tell the user how to get a key
+      FileName = "xPkLmNfQpF092DcMnBzPLqErtYA", -- It is recommended to use something unique as other scripts using Rayfield may overwrite your key file
+      SaveKey = false, -- The user's key will be saved, but if you change the key, they will be unable to use your script
       GrabKeyFromSite = false, -- If this is true, set Key below to the RAW site you would like Rayfield to get the key from
-      Key = {"Hello"} -- List of keys that will be accepted by the system, can be RAW file links (pastebin, github etc) or simple strings ("hello","key22")
+      Key = {"v1"} -- List of keys that will be accepted by the system, can be RAW file links (pastebin, github etc) or simple strings ("hello","key22")
    }
 })
 
@@ -107,6 +107,17 @@ Divider5:Set(true) -- Whether the divider's visibility is to be set to true or f
 
 local Label = Tab:CreateLabel("The following are to be used in their respective games", "circle-alert", Color3.fromRGB(255,0,0), false) -- Title, Icon, Color, IgnoreTheme
 
+local Section = Tab:CreateSection("HoHo Hub")
+
+local Button = Tab:CreateButton({
+    Name = "HoHo Hub",
+    Callback = function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/acsu123/HOHO_H/main/Loading_UI"))()
+    end,
+})
+
+
+
 local Section = Tab:CreateSection("Build a Boat for Treasure")
 
 local Button = Tab:CreateButton({
@@ -164,7 +175,7 @@ local Button = Tab:CreateButton({
 
 local Section = Tab:CreateSection("Beecon Hub")
 
-local Label = Tab:CreateLabel("Beecon Hub supports a lot of games. Research online to see what games it supports.", "circle-alert", Color3.fromRGB(255,0,0), false) -- Title, Icon, Color, IgnoreTheme
+local Label = Tab:CreateLabel("Beecon Hub will not work after running HoHo Hub as HoHo Hub actively blocks Beecon Hub", "circle-alert", Color3.fromRGB(255,0,0), false) -- Title, Icon, Color, IgnoreTheme
 
 local Button = Tab:CreateButton({
     Name = "Beecon",
@@ -172,6 +183,8 @@ local Button = Tab:CreateButton({
     loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/aabc40427f4a55db82f3c0c060796b85.lua"))() 
     end,
 })
+
+
 
 Rayfield:LoadConfiguration()
 
